@@ -1,6 +1,7 @@
 package com.example.mypaperplane.funcmodule.bookmarks;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.mypaperplane.R;
 import com.example.mypaperplane.base.BaseFragment;
@@ -11,8 +12,9 @@ import com.example.mypaperplane.base.BaseFragment;
  * @desc
  */
 
-public class BookMarksFragment extends BaseFragment {
+public class BookMarksFragment extends BaseFragment implements BookMarksContract.View {
 
+    BookMarksContract.Presenter presenter;
 
     public static BookMarksFragment newInstance() {
         Bundle args = new Bundle();
@@ -24,13 +26,24 @@ public class BookMarksFragment extends BaseFragment {
 
     @Override
     public void init() {
-
-
+        initViews(contentView);
 
     }
 
     @Override
     public int getContentId() {
         return R.layout.fragment_book_marks;
+    }
+
+    @Override
+    public void setPresenter(BookMarksContract.Presenter presenter) {
+        if (presenter != null) {
+            this.presenter = presenter;
+        }
+    }
+
+    @Override
+    public void initViews(View view) {
+
     }
 }

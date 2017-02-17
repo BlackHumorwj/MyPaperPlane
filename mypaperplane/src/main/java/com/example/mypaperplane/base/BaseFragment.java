@@ -16,15 +16,15 @@ import butterknife.ButterKnife;
  */
 
 public abstract class BaseFragment extends Fragment {
-
+    public View contentView;
 
     private int mContentId;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View contentView = View.inflate(getContext(), getContentId(), null);
-        ButterKnife.bind(this,contentView);
+         contentView = View.inflate(getContext(), getContentId(), null);
+        ButterKnife.bind(this, contentView);
         init();
         return contentView;
     }
@@ -38,7 +38,8 @@ public abstract class BaseFragment extends Fragment {
 
     /**
      * 获取布局资源ID
+     *
      * @return 资源ID
      */
-    public abstract int getContentId() ;
+    public abstract int getContentId();
 }

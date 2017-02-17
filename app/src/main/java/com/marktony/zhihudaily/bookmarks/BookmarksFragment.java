@@ -45,15 +45,15 @@ import java.util.ArrayList;
  * Created by lizhaotailang on 2016/12/20.
  */
 
-public class BookmarksFragment extends Fragment
-        implements BookmarksContract.View {
+public class BookmarksFragment extends Fragment implements BookmarksContract.View {
 
-    private RecyclerView recyclerView;
-    private SwipeRefreshLayout refreshLayout;
-    private BookmarksAdapter adapter;
+    private RecyclerView                recyclerView;
+    private SwipeRefreshLayout          refreshLayout;
+    private BookmarksAdapter            adapter;
     private BookmarksContract.Presenter presenter;
 
-    public BookmarksFragment() {}
+    public BookmarksFragment() {
+    }
 
     public static BookmarksFragment newInstance() {
         return new BookmarksFragment();
@@ -121,10 +121,7 @@ public class BookmarksFragment extends Fragment
     }
 
     @Override
-    public void showResults(ArrayList<ZhihuDailyNews.Question> zhihuList,
-                            ArrayList<GuokrHandpickNews.result> guokrList,
-                            ArrayList<DoubanMomentNews.posts> doubanList,
-                            ArrayList<Integer> types) {
+    public void showResults(ArrayList<ZhihuDailyNews.Question> zhihuList, ArrayList<GuokrHandpickNews.result> guokrList, ArrayList<DoubanMomentNews.posts> doubanList, ArrayList<Integer> types) {
 
         if (adapter == null) {
 

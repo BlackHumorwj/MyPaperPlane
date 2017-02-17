@@ -8,13 +8,13 @@ import com.android.volley.VolleyError;
  * @desc 请求返回的接口
  */
 
-public interface ResponseListener {
+public interface ResponseListener<T> {
 
     /**
      * 请求成功的回调
      * @param response 返回的数据
      */
-    void success(String response);
+    void success(T response);
 
     /**
      * 请求错误的回调

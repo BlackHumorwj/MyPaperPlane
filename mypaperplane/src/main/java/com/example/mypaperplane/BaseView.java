@@ -10,7 +10,7 @@ import android.view.View;
 
 public interface BaseView<T> {
 
-    //为View 设置Presenter
+    //为View 设置Presenter的引用
     void setPresenter(T presenter);
 
     //初始化控件
